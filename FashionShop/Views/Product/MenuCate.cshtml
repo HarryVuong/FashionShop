@@ -1,0 +1,20 @@
+﻿@model IEnumerable<FashionShop.Models.EF.Category>
+
+
+<div class="dropdown">
+    @foreach (var item in Model)
+    {
+        <div>
+            <button class="btn btn-show-menu hov-pointer" type="button" data-toggle="dropdown">
+                @item.CategoryName
+            </button>
+            <ul class="dropdown-menu" style="top:5%; left:82px" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" class="menucate">
+                    @Html.Action("CategoryMenu", "Product", new { id = item.ID })
+                </li>
+            </ul>
+        </div>
+    }   
+</div>
+
+
